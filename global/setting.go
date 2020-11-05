@@ -1,6 +1,9 @@
 package global
 
-import "github.com/catherine.li/go_blog/pkg/setting"
+import (
+	"github.com/catherine.li/go_blog/pkg/logger"
+	"github.com/catherine.li/go_blog/pkg/setting"
+)
 
 var (
 	ServerSetting *setting.ServerSettingS
@@ -8,5 +11,5 @@ var (
 	//EmailSetting    *setting.EmailSettingS
 	//JWTSetting      *setting.JWTSettingS
 	DatabaseSetting *setting.DatabaseSettingS
-	//Logger          *logger.Logger
+	Logger          *logger.Logger
 )
