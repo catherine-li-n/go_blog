@@ -1,8 +1,11 @@
 package routers
 
 import (
+	_ "github.com/catherine.li/go_blog/docs"
 	v1 "github.com/catherine.li/go_blog/internal/routers/api/v1"
 	"github.com/gin-gonic/gin"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 func NewRouter() *gin.Engine {
@@ -12,7 +15,7 @@ func NewRouter() *gin.Engine {
 	r.Use(gin.Recovery())
 	article := v1.NewArticle()
 	tag := v1.NewTag()
-
+	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	apiv1 := r.Group("/api/v1")
 	{
 		// 创建标签
