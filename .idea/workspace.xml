@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="341be284-6ca8-412b-8bde-f1c3b450645b" name="Default Changelist" comment="" />
+    <list default="true" id="341be284-6ca8-412b-8bde-f1c3b450645b" name="Default Changelist" comment="swagger api">
+      <change afterPath="$PROJECT_DIR$/internal/dao/dao.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/middleware/translation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/model/tag.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/service/article.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/service/tag.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/app/form.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/routers/api/v1/tags.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/routers/api/v1/tags.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/routers/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/logger/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/logger/logger.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,16 +29,24 @@
     </option>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1jo2kWz6w8tr2KesN6dY5Z5LXXM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
@@ -46,10 +68,28 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial" />
+    <MESSAGE value="logger" />
+    <MESSAGE value="utils (paginator convert)" />
+    <MESSAGE value="swagger api" />
+    <option name="LAST_COMMIT_MESSAGE" value="swagger api" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state x="206" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604797845379">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="206" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/41.23.1399.877@41.23.1399.877" timestamp="1604797845379" />
+    <state x="541" y="385" key="Github.CreateGistDialog" timestamp="1604546372729">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="541" y="385" key="Github.CreateGistDialog/41.23.1399.877@41.23.1399.877" timestamp="1604546372729" />
     <state x="242" y="100" key="SettingsEditor" timestamp="1604457948294">
       <screen x="41" y="23" width="1399" height="877" />
     </state>
