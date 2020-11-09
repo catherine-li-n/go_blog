@@ -2,7 +2,9 @@ package v1
 
 import (
 	"github.com/catherine.li/go_blog/global"
+	"github.com/catherine.li/go_blog/internal/service"
 	"github.com/catherine.li/go_blog/pkg/app"
+	"github.com/catherine.li/go_blog/pkg/convert"
 	"github.com/catherine.li/go_blog/pkg/errcode"
 	"github.com/gin-gonic/gin"
 )
@@ -48,7 +50,27 @@ func (t Tag) List(c *gin.Context) {
 // @Failure 400 {object} errcode.Error "请求错误"
 // @Failure 500 {object} errcode.Error "内部错误"
 // @Router /api/v1/tags [post]
-func (t Tag) Create(c *gin.Context) {}
+func (t Tag) Create(c *gin.Context) {
+	param := service.CreateTagRequest{}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf(c, "app.BindAndValid errs: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+
+	svc := service.New(c.Request.Context())
+	err := svc.CreateTag(&param)
+	if err != nil {
+		global.Logger.Errorf(c, "svc.CreateTag err: %v", err)
+		response.ToErrorResponse(errcode.ErrorCreateTagFail)
+		return
+	}
+
+	response.ToResponse(gin.H{})
+	return
+}
 
 // @Summary 更新标签
 // @Produce  json
@@ -60,7 +82,27 @@ func (t Tag) Create(c *gin.Context) {}
 // @Failure 400 {object} errcode.Error "请求错误"
 // @Failure 500 {object} errcode.Error "内部错误"
 // @Router /api/v1/tags/{id} [put]
-func (t Tag) Update(c *gin.Context) {}
+func (t Tag) Update(c *gin.Context) {
+	param := service.UpdateTagRequest{ID: convert.StrTo(c.Param("id")).MustUInt32()}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf(c, "app.BindAndValid errs: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+
+	svc := service.New(c.Request.Context())
+	err := svc.UpdateTag(&param)
+	if err != nil {
+		global.Logger.Errorf(c, "svc.UpdateTag err: %v", err)
+		response.ToErrorResponse(errcode.ErrorUpdateTagFail)
+		return
+	}
+
+	response.ToResponse(gin.H{})
+	return
+}
 
 // @Summary 删除标签
 // @Produce  json
@@ -69,4 +111,24 @@ func (t Tag) Update(c *gin.Context) {}
 // @Failure 400 {object} errcode.Error "请求错误"
 // @Failure 500 {object} errcode.Error "内部错误"
 // @Router /api/v1/tags/{id} [delete]
-func (t Tag) Delete(c *gin.Context) {}
+func (t Tag) Delete(c *gin.Context) {
+	param := service.DeleteTagRequest{ID: convert.StrTo(c.Param("id")).MustUInt32()}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf(c, "app.BindAndValid errs: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+
+	svc := service.New(c.Request.Context())
+	err := svc.DeleteTag(&param)
+	if err != nil {
+		global.Logger.Errorf(c, "svc.DeleteTag err: %v", err)
+		response.ToErrorResponse(errcode.ErrorDeleteTagFail)
+		return
+	}
+
+	response.ToResponse(gin.H{})
+	return
+}

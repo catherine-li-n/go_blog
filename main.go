@@ -2,10 +2,12 @@ package main
 
 import (
 	"github.com/catherine.li/go_blog/global"
+	"github.com/catherine.li/go_blog/internal/model"
 	"github.com/catherine.li/go_blog/internal/routers"
 	"github.com/catherine.li/go_blog/pkg/logger"
 	"github.com/catherine.li/go_blog/pkg/setting"
 	"github.com/gin-gonic/gin"
+	_ "github.com/go-sql-driver/mysql"
 	"gopkg.in/natefinch/lumberjack.v2"
 	"log"
 	"net/http"
@@ -22,7 +24,23 @@ func init() {
 	if err != nil {
 		log.Fatalf("init.setupLogger err: %v", err)
 	}
+	err = setupDBEngine()
+	if err != nil {
+		log.Fatalf("init.setupDBEngine err: %v", err)
+	}
+	//err = setupValidator()
+	//if err != nil {
+	//	log.Fatalf("init.setupValidator err: %v", err)
+	//}
 }
+
+//func setupValidator() error {
+//	global.Validator = validator.NewCustomValidator()
+//	global.Validator.Engine()
+//	binding.Validator = global.Validator
+//
+//	return nil
+//}
 
 func setupSetting() error {
 	s, err := setting.NewSetting()
@@ -43,6 +61,16 @@ func setupSetting() error {
 	}
 	global.ServerSetting.ReadTimeout *= time.Second
 	global.ServerSetting.WriteTimeout *= time.Second
+	return nil
+}
+
+func setupDBEngine() error {
+	var err error
+	global.DBEngine, err = model.NewDBEngine(global.DatabaseSetting)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
