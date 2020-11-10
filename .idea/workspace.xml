@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="341be284-6ca8-412b-8bde-f1c3b450645b" name="Default Changelist" comment="models--Tag">
-      <change afterPath="$PROJECT_DIR$/internal/dao/article.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/dao/article_tag.go" afterDir="false" />
+    <list default="true" id="341be284-6ca8-412b-8bde-f1c3b450645b" name="Default Changelist" comment="models--Article">
+      <change afterPath="$PROJECT_DIR$/internal/model/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/routers/api/upload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/service/upload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/upload/file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/util/md5.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/dao/tag.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/dao/tag.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/article.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/article_tags.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/article_tag.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/model/tag.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/model/tag.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/routers/api/v1/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/routers/api/v1/article.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/service/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/service/article.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/routers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/routers/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/setting/setting.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/setting/setting.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +59,8 @@
       <recent name="$PROJECT_DIR$/pkg" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/internal/routers/api" />
+      <recent name="$PROJECT_DIR$/internal/routers" />
       <recent name="$PROJECT_DIR$/internal" />
     </key>
   </component>
@@ -76,7 +78,8 @@
     <MESSAGE value="swagger api" />
     <MESSAGE value="validation" />
     <MESSAGE value="models--Tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="models--Tag" />
+    <MESSAGE value="models--Article" />
+    <option name="LAST_COMMIT_MESSAGE" value="models--Article" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

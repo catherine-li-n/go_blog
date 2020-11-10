@@ -20,6 +20,7 @@ func NewSetting(configs ...string) (*Setting, error) {
 	}
 
 	s := &Setting{vp}
+	s.WatchSettingChange()
 	return s, nil
 }
 

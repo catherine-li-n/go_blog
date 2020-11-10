@@ -2,11 +2,14 @@ package routers
 
 import (
 	_ "github.com/catherine.li/go_blog/docs"
+	"github.com/catherine.li/go_blog/global"
 	"github.com/catherine.li/go_blog/internal/middleware"
-	v1 "github.com/catherine.li/go_blog/internal/routers/api/v1"
+	"github.com/catherine.li/go_blog/internal/routers/api"
+	"github.com/catherine.li/go_blog/internal/routers/api/v1"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
+	"net/http"
 )
 
 func NewRouter() *gin.Engine {
@@ -19,7 +22,12 @@ func NewRouter() *gin.Engine {
 
 	article := v1.NewArticle()
 	tag := v1.NewTag()
+
+	upload := api.NewUpload()
 	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	r.POST("/upload/file", upload.UploadFile)
+
+	r.StaticFS("/static", http.Dir(global.AppSetting.UploadSavePath))
 	apiv1 := r.Group("/api/v1")
 	{
 		// 创建标签
