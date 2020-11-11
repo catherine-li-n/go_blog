@@ -11,6 +11,12 @@ type ServerSettingS struct {
 	WriteTimeout time.Duration
 }
 
+type JWTSettingS struct {
+	Secret string
+	Issuer string
+	Expire time.Duration
+}
+
 type AppSettingS struct {
 	DefaultPageSize       int
 	MaxPageSize           int
@@ -23,6 +29,7 @@ type AppSettingS struct {
 	UploadImageMaxSize    int
 	UploadImageAllowExts  []string
 }
+
 type DatabaseSettingS struct {
 	DBType       string
 	UserName     string

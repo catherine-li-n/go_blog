@@ -39,7 +39,7 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 		db.LogMode(true)
 	}
 	db.SingularTable(true)
-	db.AutoMigrate(&Tag{}, &Article{}, &ArticleTag{})
+	db.AutoMigrate(&Tag{}, &Article{}, &ArticleTag{}, &Auth{})
 	db.Callback().Create().Replace("gorm:update_time_stamp", updateTimeStampForCreateCallback)
 	db.Callback().Update().Replace("gorm:update_time_stamp", updateTimeStampForUpdateCallback)
 	db.Callback().Delete().Replace("gorm:delete", deleteCallback)
